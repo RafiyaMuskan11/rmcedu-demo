@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 10rem;
+}
+
+.header img {
+    height: 5rem;
+    
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav ul li {
+    list-style: none;
+    padding: 2rem 2rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.nav ul li:hover {
+    background-color: rgba(25, 25, 239, 0.962);
+}
+
+.navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-icon {
+    width: 4rem;
+    height: 4rem;
+}
+
+.nav-icon[name="close-outline"] {
+    display: none;
+}
+
+button {
+    padding: 2px 5px ! important;
+    background-color: rgb(235, 172, 54);
+}
+
+.home {
+    padding: 9rem 0;
+    background-color: #a5d8ff;
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.home p {
+    font-size: 3rem;
+}
+
+
+
+
+@media (max-width: 970px) {
+    .navbar-btn {
+        display: block;
+        z-index: 999;
+        font-weight: bolder;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background: #e7f5ff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    .active .nav {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .navbar-btn .nav-icon[name="close-outline"] {
+        display: block;
+    }
+
+    .active .navbar-btn .nav-icon[name="menu-outline"] {
+        display: none;
+    }
+}
